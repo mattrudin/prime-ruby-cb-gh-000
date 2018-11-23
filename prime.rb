@@ -1,10 +1,6 @@
 # Add  code here!
-def prime?(number)
-  if number <= 1
-    return false
-  end
-  i = 2
-  while i < number
-    return number % i == 0 ? false : true
-  end
+def prime?(num)
+  return false if num <= 1
+  Math.sqrt(num).to_i.downto(2).each {|i| return false if num % i == 0}
+  true
 end
